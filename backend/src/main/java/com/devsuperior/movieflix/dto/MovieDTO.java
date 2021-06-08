@@ -1,15 +1,24 @@
 package com.devsuperior.movieflix.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Positive;
+
 import com.devsuperior.movieflix.entities.Movie;
 
 public class MovieDTO {
 	
 	private Long id;
+	
+	@NotBlank(message = "Titulo obrigatório")
 	private String title;
 	private String subTitle;
+	
+	@Positive(message = "Não pode ser um valor negativo")
 	private Integer year;
 	private String imgUrl;
 	private String synopsis;
+	
+	private Long genreId;
 	
 	public MovieDTO() {
 		
@@ -31,6 +40,7 @@ public class MovieDTO {
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		synopsis = entity.getSynopsis();
+		genreId = entity.getGenre().getId();
 	}
 
 
@@ -80,5 +90,9 @@ public class MovieDTO {
 
 	public void setSynopsis(String synopsis) {
 		this.synopsis = synopsis;
+	}
+
+	public Long getGenreId() {
+		return genreId;
 	}
 }
