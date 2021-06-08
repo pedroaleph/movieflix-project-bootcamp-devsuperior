@@ -7,3 +7,7 @@ INSERT INTO tb_user (name, email, password) VALUES ('Ana Maria', 'ana@gmail.com'
 INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
+
+INSERT INTO tb_genre (name) VALUES ('Animação');
+INSERT INTO tb_genre (name) VALUES ('Fantasia');
+INSERT INTO tb_genre (name) VALUES ('Ficção científica');  
