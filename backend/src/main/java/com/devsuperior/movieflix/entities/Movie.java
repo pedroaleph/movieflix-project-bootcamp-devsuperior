@@ -35,7 +35,7 @@ public class Movie implements Serializable {
 	@JoinColumn(name = "genre_id")
 	private Genre genre;
 	
-	@OneToMany(mappedBy = "review")
+	@OneToMany(mappedBy = "movie")
 	private List<Review> reviews = new ArrayList<>();
 
 	public Movie(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis, Genre genre) {
