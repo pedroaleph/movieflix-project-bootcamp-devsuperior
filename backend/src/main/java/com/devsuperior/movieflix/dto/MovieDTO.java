@@ -7,6 +7,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Positive;
 
 import com.devsuperior.movieflix.entities.Movie;
+import com.devsuperior.movieflix.entities.Review;
 
 public class MovieDTO {
 	
@@ -45,9 +46,13 @@ public class MovieDTO {
 		subTitle = entity.getSubTitle();
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
-		synopsis = entity.getSynopsis();
 		genreId = entity.getGenre().getId();
-		entity.getReviews().forEach(review -> this.reviews.add( new ReviewDTO(review)));
+	}
+	
+	public MovieDTO(Movie entity,  List<Review> reviews) {
+		this(entity);
+		synopsis = entity.getSynopsis();
+		reviews.forEach(review -> this.reviews.add( new ReviewDTO(review)));
 	}
 
 
@@ -101,5 +106,9 @@ public class MovieDTO {
 
 	public Long getGenreId() {
 		return genreId;
+	}
+
+	public List<ReviewDTO> getReviews() {
+		return reviews;
 	}
 }

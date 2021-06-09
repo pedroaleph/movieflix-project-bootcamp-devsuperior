@@ -37,6 +37,10 @@ public class Movie implements Serializable {
 	
 	@OneToMany(mappedBy = "movie")
 	private List<Review> reviews = new ArrayList<>();
+	
+	public Movie() {
+		
+	}
 
 	public Movie(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis, Genre genre) {
 		this.id = id;
