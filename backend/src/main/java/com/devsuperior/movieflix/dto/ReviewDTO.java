@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.validation.constraints.NotBlank;
 
 import com.devsuperior.movieflix.entities.Review;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ReviewDTO implements Serializable{
 	
@@ -15,6 +16,7 @@ public class ReviewDTO implements Serializable{
 	@NotBlank(message = "Não é permitido texto vazio na avaliação")
 	private String text;
 	
+	@JsonProperty("movie_id")
 	private Long movieId;
 	private UserDTO user;
 	
