@@ -29,7 +29,8 @@ public class MovieService {
 		
 		Genre genre = (genreId == 0) ? null
 				: genreRepository.getOne(genreId);
-		Page<Movie> page = repository.findByGenreOrderByTitleAsc(genre, pageRequest);
+		Page<Movie> page = (genre == null)? repository.findAll(pageRequest)
+				: repository.findByGenreOrderByTitleAsc(genre, pageRequest);
 		
 		return page.map(movie -> new MovieDTO(movie));
 	}
