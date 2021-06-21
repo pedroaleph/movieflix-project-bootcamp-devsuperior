@@ -1,4 +1,4 @@
-//import { isAuthenticated, logout } from "core/utils/auth";
+import { isAuthenticated, logout } from "core/utils/auth";
 import { Route } from "react-router-dom";
 
 type Props = {
@@ -11,9 +11,9 @@ const PrivateRoute = ({ children, path }: Props) => {
     <Route 
       path={path}
       render={() => {
-        /*if (!isAuthenticated()) {
-          return logout();
-        } */
+        if (!isAuthenticated()) {
+          logout();
+        } 
         return children;
       }}
     />
