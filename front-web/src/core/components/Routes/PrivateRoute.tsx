@@ -16,6 +16,7 @@ const PrivateRoute = ({ children, path }: Props) => {
         } 
         return children;
       }}
+      exact
     />
   )
 }

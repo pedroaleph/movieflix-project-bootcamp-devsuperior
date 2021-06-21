@@ -25,6 +25,10 @@ const Routes = () => {
           <PrivateRoute path="/movies/:movieId">
             <MovieDetails />
           </PrivateRoute>
+          <Redirect from="/*" to="/" />
+          <Route path="/*">
+
+          </Route>
         </Switch>
     </Router>
   );

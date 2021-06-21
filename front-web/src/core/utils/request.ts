@@ -8,8 +8,8 @@ type LoginData = {
 }
 
 const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
-export const CLIENT_ID =  process.env.REACT_APP_CLIENT_ID ?? 'movieflix';
-export const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET ?? 'movieflix123';
+const CLIENT_ID =  process.env.REACT_APP_CLIENT_ID ?? 'movieflix';
+const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET ?? 'movieflix123';
 
 axios.interceptors.response.use(
   function (response) {
