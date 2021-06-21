@@ -32,7 +32,7 @@ export const makeRequest = (params: AxiosRequestConfig) => {
   return axios({
     ...params,
     headers,
-    url: BASE_URL
+    baseURL: BASE_URL
   })
 }
 
@@ -46,4 +46,10 @@ export const makeLogin = (loginData: LoginData) => {
 
   const payload  = qs.stringify({...loginData, grant_type: 'password'});
 
+  return makeRequest({ 
+    url:'/oauth/token',
+    data: payload,
+    method: 'POST',
+    headers
+  })
 }
