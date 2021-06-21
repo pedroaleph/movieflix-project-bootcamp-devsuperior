@@ -53,7 +53,7 @@ Pré-requisitos: npm / yarn
 
 ```bash
 # clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
+git clone https://github.com/pedroaleph/movieflix-project-bootcamp-devsuperior.git
 
 # entrar na pasta do projeto front end web
 cd front-web
