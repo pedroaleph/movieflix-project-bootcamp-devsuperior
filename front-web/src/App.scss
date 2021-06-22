@@ -49,6 +49,30 @@ a {
   }
 }
 
+//----custom toasts----//
+
+//grey toast
+.grey-toast{
+  background: #6C6C6C;
+  color: #fff;
+}
+
+//dark toast
+.dark-toast{
+  background: #000000;
+  color: #FFF;
+}
+
+.yellow-progress{
+  background:  #FFC700;
+}
+
+.Toastify__close-button {
+  color: #fff;
+}
+
+//--------//
+
 @media (max-width: 576px) {
   .card-base {
     box-shadow: none;

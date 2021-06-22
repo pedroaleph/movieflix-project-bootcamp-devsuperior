@@ -1,7 +1,7 @@
 .auth-login-container {
   margin: 95px 50px 180px;
   align-items: center;
-
+  
   .auth-login-title {
     font-weight: normal;
     font-size: 48px;
@@ -30,7 +30,9 @@
       top: 51%;
       right: 3%;
     }
-    margin-bottom: 150px;
+  }
+  .auth-login-button {
+    margin-top: 150px;
   }
 }
 
@@ -41,8 +43,8 @@
       font-size: 30px;
       line-height: 41px;
     }
-    .auth-login-password {
-      margin-bottom: 35px;
+    .auth-login-button {
+      margin-top: 35px;
     }
   }
 }

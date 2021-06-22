@@ -7,7 +7,7 @@ type Props = {
 
 const ButtonIcon = ({ text }: Props) => {
   return (
-    <button type="button" className="btn btn-primary default-button">
+    <button className="btn btn-primary default-button">
       <div className="btn-icon-text">
         <h3>{text}</h3>
       </div>

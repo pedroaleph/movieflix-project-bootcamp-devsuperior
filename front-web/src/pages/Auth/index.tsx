@@ -1,4 +1,5 @@
 import { ReactComponent as AuthImage } from 'core/assets/images/auth-image.svg';
+import { isAuthenticated, logout } from 'core/utils/auth';
 import { Switch, Route } from 'react-router-dom';
 import Login from './Login';
 import './styles.scss';
@@ -18,6 +19,7 @@ const Auth = () => {
       <div className="card-base auth-content border-radius-20">
         <Switch>
           <Route path="/auth/login">
+            {isAuthenticated() && logout()}
             <Login />
           </Route>
         </Switch>

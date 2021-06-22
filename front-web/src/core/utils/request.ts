@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import qs from "qs";
 import { getSessionData, logout } from "./auth";
 
-type LoginData = {
+export type LoginData = {
   username: string;
   password: string;
 }
