@@ -1,9 +1,9 @@
 import './styles.scss';
 
-const LoginCard = () => {
+const Login = () => {
   return (
     <div></div>
   )
 }
 
-export default LoginCard;
+export default Login;

@@ -1,0 +1,35 @@
+.auth-container {
+  margin: 40px 40px 70px 140px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.auth-info {
+  margin-top: 30px;
+  .auth-info-title {
+    font-size: 55px;
+    line-height: 75px;
+    letter-spacing: -0.015em;
+  }
+  .auth-info-description {
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: -0.015em;
+    color: #F2F2F2;
+    margin-top: 100px;
+  }
+  .auth-info-image {
+    margin-top: 70px;
+    margin-left: 60px;
+  }
+}
+
+.auth-content {
+  width: 550px;
+}
+
+@media (max-width: 768px) {
+  .auth-info {
+    display: none;
+  }
+}
