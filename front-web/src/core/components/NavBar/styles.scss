@@ -16,5 +16,27 @@
   button {
     width: 100px;
     border-radius: 10px;
+    h5 {
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: -0.015em;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-main {
+    height: 50px;
+    padding: 20px 25px 20px 50px;
+
+    .nav-logo-text {
+      font-size: 18px;
+      line-height: 25px;
+      letter-spacing: -0.015em;
+    }
+
+    button {
+      width: 75px;
+    }
   }
 }
