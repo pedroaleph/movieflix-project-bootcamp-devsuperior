@@ -1,5 +1,5 @@
 .auth-container {
-  margin: 40px 40px 70px 140px;
+  margin: 40px 40px 0 140px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -29,6 +29,9 @@
 }
 
 @media (max-width: 768px) {
+  .auth-container {
+    margin: 25px;
+  }
   .auth-info {
     display: none;
   }

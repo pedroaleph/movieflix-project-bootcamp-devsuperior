@@ -31,3 +31,27 @@ a {
 .border-radius-20 {
   border-radius: 20px;
 }
+
+.input-base {
+  margin-top: 35px;
+  width: 100%;
+  padding: 0 50px 0 20px;
+  border: 1px solid #E1E1E1;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 18px;
+  line-height: 25px;
+  letter-spacing: -0.015em;
+  color: #263238;
+
+  &::placeholder{
+    color: #9E9E9E;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-base {
+    box-shadow: none;
+    background: none;
+  }
+}
