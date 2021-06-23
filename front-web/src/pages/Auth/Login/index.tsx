@@ -16,7 +16,6 @@ const Login = () => {
   const onSubmit = (data: LoginData) => {
     makeLogin(data)
       .then(response => {
-        console.log(response.data)
         saveSessionData(response.data);
         history.replace('/');
       })

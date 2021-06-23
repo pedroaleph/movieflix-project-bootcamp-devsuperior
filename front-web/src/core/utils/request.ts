@@ -8,7 +8,7 @@ export type LoginData = {
 }
 
 const BASE_URL = process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:8080';
-const CLIENT_ID =  process.env.REACT_APP_CLIENT_ID ?? 'movieflix';
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID ?? 'movieflix';
 const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET ?? 'movieflix123';
 
 axios.interceptors.response.use(
@@ -40,16 +40,17 @@ export const makeLogin = (loginData: LoginData) => {
   const token = `${CLIENT_ID}:${CLIENT_SECRET}`;
 
   const headers = {
-    Authorization: `Basic ${token}`,
+    Authorization: `Basic ${window.btoa(token)}`,
     'Content-Type': 'application/x-www-form-urlencoded'
   };
 
-  const payload  = qs.stringify({...loginData, grant_type: 'password'});
+  const payload = qs.stringify({ ...loginData, grant_type: 'password' });
 
-  return makeRequest({ 
-    url:'/oauth/token',
+  return axios({
+    url: '/oauth/token',
     data: payload,
     method: 'POST',
-    headers
+    headers,
+    baseURL: BASE_URL
   })
 }
