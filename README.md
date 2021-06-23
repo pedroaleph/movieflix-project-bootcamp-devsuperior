@@ -2,7 +2,7 @@
 
 # Sobre o projeto
 
-Deploy do backend no heroku : https://movieflix-pedroaleph.herokuapp.com
+Deploy do back end no heroku: https://movieflix-pedroaleph.herokuapp.com
 
 [link do deploy no netlify]
 
@@ -12,8 +12,6 @@ A aplicação consistem em :
 - Permite avaliar cada filme em um catalógo de filmes (para isso é necessário que o usuário faça login)
 - Apenas usuários membros podem avaliar os filmes, visitantes podem apenas visualizar essas avaliações
 - No catálogo de filmes é possivel filtrar os filmes pelo seu gênero 
-
-(Só o backend foi desenvolvido até o momento)
 
 # Tecnologias utilizadas
 ## Back end

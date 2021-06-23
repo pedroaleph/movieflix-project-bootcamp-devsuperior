@@ -1,0 +1,58 @@
+.movies-genre-filter-container {
+  height: 60px;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.genre-filter-select {
+  width: 250px;
+
+  .filter-select__control {
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background: #6C6C6C;
+
+    .filter-select__input {
+      display: none !important;
+    }
+
+    &--is-focused {
+      box-shadow: none;
+    }
+    
+    .filter-select__indicator-separator {
+      display: none;
+    }
+    
+    .filter-select__placeholder, .filter-select__single-value {
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: -0.015em;
+      color: #FFFFFF;
+    }
+  }
+
+  .filter-select__menu {
+    background: #6C6C6C;
+
+    .filter-select__option {
+      &--is-selected {
+        background:  #FFC700;
+      }
+      &--is-focused {
+        color: #6C6C6C;
+      }
+    }
+  }  
+}
+
+@media (max-width: 576px) {
+  .movies-genre-filter-container {
+    padding: 15px 20px;
+  }
+  .genre-filter-select {
+    width: 100%;
+  }
+}

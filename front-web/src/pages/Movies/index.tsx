@@ -1,8 +1,19 @@
+import { Genre } from 'core/types/genre';
+import { useState } from 'react';
+import GenreFilter from './GenreFilter';
 import './styles.scss';
 
 const Movies = () => {
+  const [genre, setGenre] = useState<Genre>();
+
+  const handleChangeGenre = (genre: Genre) => {
+    setGenre(genre);
+  }
+
   return (
-    <div></div>
+    <div className="movies-container">
+      <GenreFilter handleChangeGenre={handleChangeGenre} />
+    </div>
   )
 }
 

@@ -44,7 +44,7 @@ export const isTokenValid = () => {
   const { exp } = getAccessTokenDecoded();
   const expirationTime = Date.now() <= exp * 1000;
   if (!expirationTime) {
-    toast("Sua sessão foi expirada, logue novamente", {
+    toast("Sua sessão foi expirada, logue novamente para continuar", {
       className: 'dark-toast',
       progressClassName: 'yellow-progress'
     });

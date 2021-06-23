@@ -40,3 +40,12 @@
     margin: 0;
   }
 }
+
+@media (max-width: 576px) {
+  .auth-container {
+    .card-base {
+      box-shadow: none;
+      background: none;
+    }
+  }
+}

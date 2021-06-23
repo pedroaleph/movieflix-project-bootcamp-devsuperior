@@ -1,0 +1,12 @@
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25px 135px 0;
+}
+
+@media (max-width: 768px) {
+  .movies-container {
+    margin: 20px 20px 0;
+  }
+}
