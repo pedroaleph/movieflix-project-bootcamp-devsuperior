@@ -2,7 +2,9 @@ import './styles.scss';
 
 const MovieDetails = () => {
   return (
-    <div></div>
+    <div>
+
+    </div>
   )
 }
 

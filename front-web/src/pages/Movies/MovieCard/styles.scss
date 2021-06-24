@@ -1,0 +1,38 @@
+.movie-card-container {
+  width: 270px;
+  height: 322px;
+  padding-top: 25px;
+
+  .movie-card-image {
+    width: 100%;
+  }
+
+  .movie-card-info {
+    padding: 14px;
+
+    .movie-card-title {
+      font-size: 20px;
+      line-height: 27px;
+      letter-spacing: -0.015em;
+      color: #FFFFFF;
+    }
+
+    .movie-card-year {
+      font-size: 16px;
+      line-height: 22px;
+      letter-spacing: -0.015em;
+      color: #FFC700;
+    }
+
+    .movie-card-subtitle {
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: -0.015em;
+      color: #FFFFFF;
+    }
+  }
+
+  &:hover {
+    border: 1px solid #FFC700;
+  }
+}

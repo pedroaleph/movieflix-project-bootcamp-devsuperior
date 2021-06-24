@@ -29,6 +29,7 @@ const GenreFilter = ({ handleChangeGenre }: Props) => {
         className="genre-filter-select"
         classNamePrefix="filter-select"
         placeholder="Filtrar por Gênero"
+        onChange={value => handleChangeGenre(value as Genre)}
       />
     </div>
   )
