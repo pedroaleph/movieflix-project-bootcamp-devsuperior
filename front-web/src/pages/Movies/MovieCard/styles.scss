@@ -36,3 +36,10 @@
     border: 1px solid #FFC700;
   }
 }
+
+@media (max-width: 576px) {
+  .movie-card-container {
+    width: 90vw;
+    height: 85vw;
+  }
+}

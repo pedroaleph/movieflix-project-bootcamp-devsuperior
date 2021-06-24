@@ -1,0 +1,42 @@
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination-previous {
+  transform: rotate(180deg);
+  margin-right: 15px;
+}
+
+.pagination-next{
+  margin-left: 15px;
+}
+
+.active-page {
+  cursor: pointer;
+}
+
+.inactive-page {
+  pointer-events: none;
+  display: none;
+}
+
+.pagination-item {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: #6C6C6C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  border-radius: 50%;
+  margin-right:10px;
+
+  &.active {
+    background: #FFC700;
+  }
+}
