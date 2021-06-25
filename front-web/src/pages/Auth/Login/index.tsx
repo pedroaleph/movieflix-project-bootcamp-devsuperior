@@ -1,7 +1,7 @@
 import { ReactComponent as HidePasswordIcon } from 'core/assets/images/hide-password.svg';
 import { ReactComponent as ShowPasswordIcon } from 'core/assets/images/show-password.svg';
 import ButtonIcon from 'core/components/ButtonIcon';
-import { saveSessionData } from 'core/utils/auth';
+import { getSessionData, saveSessionData } from 'core/utils/auth';
 import history from 'core/utils/history';
 import { LoginData, makeLogin } from 'core/utils/request';
 import { useState } from 'react';
@@ -18,6 +18,10 @@ const Login = () => {
       .then(response => {
         saveSessionData(response.data);
         history.replace('/');
+        toast(`Bem vindo(a) ${getSessionData().userName}`, {
+          className: 'grey-toast',
+          progressClassName: 'yellow-progress'
+        });
       })
       .catch(() => {
         toast("Usuário ou senha inválidos!", {

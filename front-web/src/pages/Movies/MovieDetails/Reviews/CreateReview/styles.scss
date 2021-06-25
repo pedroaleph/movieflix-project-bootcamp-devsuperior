@@ -26,3 +26,11 @@
     }
   }
 }
+
+@media (max-width: 576px) {
+  .movie-details-create-review {
+    button {
+      width: 100%;
+    }
+  }
+}
