@@ -24,10 +24,12 @@
 }
 
 @media (max-width: 576px) {
-  .movies-catalog {
-    justify-content: center;
-    margin: 20px 0 25px;
-    grid-template-columns: repeat(auto-fill, 370px);
-    grid-gap: 20px;
+  .movies-container {
+    .movies-catalog {
+      justify-content: center;
+      margin: 20px 0 25px;
+      grid-template-columns: repeat(auto-fill, 370px);
+      grid-gap: 20px;
+    }
   }
 }

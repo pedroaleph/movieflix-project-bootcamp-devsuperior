@@ -1,0 +1,28 @@
+.movie-details-review-card {
+  padding-top: 15px;
+
+  .movie-details-review-card-user {
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+
+    .movie-details-review-card-star-icon {
+      margin: 0 20px;
+    }
+  }
+
+  .movie-details-review-card-text {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: justify;
+    letter-spacing: -0.015em;
+    color: #9E9E9E;
+
+    border: 1px solid #E1E1E1;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 15px 20px;
+    margin: 0;
+  }
+}

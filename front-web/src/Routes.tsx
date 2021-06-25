@@ -19,7 +19,7 @@ const Routes = () => {
           <Route path="/auth">
             <Auth />
           </Route>
-          <PrivateRoute path="/movies">
+          <PrivateRoute path="/movies" exact>
             <Movies />
           </PrivateRoute>
           <PrivateRoute path="/movies/:movieId">

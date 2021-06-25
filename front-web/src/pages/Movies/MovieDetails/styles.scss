@@ -1,0 +1,9 @@
+.movie-details-container {
+  margin: 35px 135px 45px;
+}
+
+@media (max-width: 768px) {
+  .movie-details-container {
+    margin: 20px 20px 30px;
+  }
+}

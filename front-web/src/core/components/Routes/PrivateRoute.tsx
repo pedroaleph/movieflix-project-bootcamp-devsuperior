@@ -4,9 +4,10 @@ import { Route } from "react-router-dom";
 type Props = {
   children: React.ReactNode;
   path: string;
+  exact?: boolean;
 }
 
-const PrivateRoute = ({ children, path }: Props) => {
+const PrivateRoute = ({ children, path, exact }: Props) => {
   return (
     <Route 
       path={path}
@@ -16,7 +17,7 @@ const PrivateRoute = ({ children, path }: Props) => {
         } 
         return children;
       }}
-      exact
+      exact={exact}
     />
   )
 }
