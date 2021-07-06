@@ -1,10 +1,11 @@
 # MovieFlix
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b0393705-f6af-43de-84aa-47cfd451b284/deploy-status)](https://app.netlify.com/sites/pedroaleph-movieflix-bootcamp/deploys) [![Build Status](https://travis-ci.com/pedroaleph/movieflix-project-bootcamp-devsuperior.svg?branch=main)](https://travis-ci.com/pedroaleph/movieflix-project-bootcamp-devsuperior)
 
 # Sobre o projeto
 
 Deploy do back end no heroku: https://movieflix-pedroaleph.herokuapp.com
 
-[link do deploy no netlify]
+Deploy do front web no netlify: https://pedroaleph-movieflix-bootcamp.netlify.app
 
 Movieflix é uma aplicação full stack web e mobile Desenvolvido como projeto final de Bootcamp versão 2.0 da [DevSuperior](https://devsuperior.com "Site da DevSuperior").
 
