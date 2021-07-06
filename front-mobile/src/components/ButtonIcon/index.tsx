@@ -1,16 +1,20 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
-import arrow from '../../assets/arrow.png';
 
-const ButtonIcon = () => {
+type props = {
+  name: string;
+  path: string;
+}
+
+const ButtonIcon = ({ name, path }: props) => {
   return(
     <TouchableOpacity style={styles.container} activeOpacity={0.8}>
         <Text style={styles.text}>
-          fazer login
+          {name}
         </Text>
         <View style={styles.arrowContainer}>
-          <Image source={arrow}/>
+          <Image source={require('../../assets/arrow.png')}/>
         </View>
       </TouchableOpacity>
   )
