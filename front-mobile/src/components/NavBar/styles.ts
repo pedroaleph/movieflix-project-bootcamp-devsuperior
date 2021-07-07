@@ -7,7 +7,10 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 15,
+  },
+  goBackContainer: {
+    width: 45,
+    alignItems: "center",
   },
   text: {
     fontWeight: 'bold',

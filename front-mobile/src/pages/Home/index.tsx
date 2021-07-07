@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       <Text style={styles.subtitle}>
         Diga o que você achou do seu filme favorito
       </Text>
-      <ButtonIcon name="fazer login" path="Login" />
+      <ButtonIcon name="fazer login" currentPage="Home" nextPage="Login" />
     </View>
   );
 }

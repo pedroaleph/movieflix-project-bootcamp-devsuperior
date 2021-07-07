@@ -12,12 +12,4 @@ const colors = {
   card: "#6C6C6C",
 };
 
-const backgroundStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.background,
-    padding: 20,
-  },
-});
-
-export { colors, backgroundStyles };
+export { colors };
