@@ -2,7 +2,7 @@ import { useFonts, OpenSans_400Regular, OpenSans_700Bold } from '@expo-google-fo
 import AppLoading from 'expo-app-loading';
 import React from 'react';
 import { View } from 'react-native';
-import { styles } from './App';
+import {backgroundStyles } from './src/custom';
 import NavBar from './src/components/NavBar';
 import Routes from './src/routes';
 
@@ -19,7 +19,7 @@ const App: React.FC = () => {
   return (
     <>
       <NavBar />
-      <View style={styles.container}>
+      <View style={backgroundStyles.container}>
         <Routes />
       </View>
     </>

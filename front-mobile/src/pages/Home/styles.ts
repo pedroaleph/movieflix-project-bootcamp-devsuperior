@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../../../App";
+import { colors } from "../../custom";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     justifyContent: 'space-around',
@@ -35,5 +35,3 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
 });
-
-export { styles };

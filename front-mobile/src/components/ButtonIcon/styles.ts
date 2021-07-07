@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../../../App";
+import { colors } from "../../custom";
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: 50,
@@ -30,5 +30,3 @@ const styles = StyleSheet.create({
     backgroundColor: colors.arrow,
   },
 });
-
-export { styles };
