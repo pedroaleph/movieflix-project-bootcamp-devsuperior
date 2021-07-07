@@ -3,10 +3,10 @@ import AppLoading from 'expo-app-loading';
 import React from 'react';
 import { View } from 'react-native';
 import { styles } from './App';
-import NavBar from './src/navbar';
+import NavBar from './src/components/NavBar';
 import Routes from './src/routes';
 
-export default function App() {
+const App: React.FC = () => {
   let [fontsLoaded] = useFonts({
     OpenSans_400Regular,
     OpenSans_700Bold
@@ -25,3 +25,5 @@ export default function App() {
     </>
   );
 }
+
+export default App;

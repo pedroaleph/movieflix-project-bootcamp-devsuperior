@@ -2,12 +2,13 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import ButtonIcon from "../../components/ButtonIcon";
 import { styles } from "./styles";
+import homeImage from '../../assets/home.png';
 
-const Home = () => {
+const Home: React.FC = () => {
 
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/home.png')} style={styles.image} />
+      <Image source={homeImage} style={styles.image} />
       <Text style={styles.title}>
         Avalie filmes
       </Text>

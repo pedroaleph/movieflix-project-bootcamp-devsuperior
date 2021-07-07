@@ -5,7 +5,7 @@ import Home from "../pages/Home";
 
 const Stack = createStackNavigator();
 
-const Routes = () => {
+const Routes: React.FC = () => {
 
   return (
     <NavigationContainer>

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-export const colors = {
+const colors = {
   primary: "#FFC700",
   background: "#525252",
   black: "#000000",
@@ -10,12 +10,14 @@ export const colors = {
   input: "#FEFEFE",
   placeholder: "#BFBFBF",
   card: "#6C6C6C",
-}
+};
 
-export const styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: colors.background,
     padding: 20,
   },
 });
+
+export { colors, styles };
