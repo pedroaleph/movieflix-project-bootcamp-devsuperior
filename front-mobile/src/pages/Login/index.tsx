@@ -3,8 +3,10 @@ import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import ButtonIcon from "../../components/ButtonIcon";
 import eyesOpened from "../../assets/eyes-opened.png";
 import eyesClosed from "../../assets/eyes-closed.png";
-import { LoginData } from "../../services/auth";
+import { getUsername, LoginData } from "../../services/auth";
 import { styles } from "./styles";
+import { errorMessage, successMessage } from "../../custom";
+import { login } from "../../services/requests";
 
 const Login: React.FC = () => {
   const [userInfo, setUserInfo] = useState<LoginData>({
@@ -13,8 +15,15 @@ const Login: React.FC = () => {
   });
   const [hidePassword, setHidePassword] = useState(true);
 
-  const handleLogin = () => {
-    
+  const handleLogin = async () => {
+    await login(userInfo)
+    .then( async () => {
+      const username = await getUsername();
+      successMessage(`Bem vindo(a) ${username}`)
+    })
+    .catch(()=> {
+      errorMessage('Usuário ou senha inválidos!')
+    })
   }
 
   return (

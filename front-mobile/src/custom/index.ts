@@ -14,11 +14,25 @@ const colors = {
   card: "#6C6C6C",
 };
 
-const dataErrorMessage = () => {
-  Toast.show('Erro ao salvar dados!', {
+const errorMessage = (message: string) => {
+  Toast.show(message, {
     containerStyle: { backgroundColor: colors.black },
     textStyle: { color: colors.primary },
   })
 }
 
-export { colors, dataErrorMessage };
+const defaultMessage = (message: string) => {
+  Toast.show(message, {
+    containerStyle: { backgroundColor: colors.primary },
+    textStyle: { color: colors.black },
+  })
+}
+
+const successMessage = (message: string) => {
+  Toast.showSuccess(message, {
+    containerStyle: { backgroundColor: colors.primary },
+    textStyle: { color: colors.black },
+  })
+}
+
+export { colors, errorMessage, defaultMessage, successMessage };
