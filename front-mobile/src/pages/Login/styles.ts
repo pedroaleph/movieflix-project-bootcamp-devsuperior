@@ -4,7 +4,6 @@ import { colors } from "../../custom";
 export const styles = StyleSheet.create({
   container: {
     alignItems: "center",
-    flex: 1,
     paddingVertical: 95,
     paddingHorizontal: 40,
   },

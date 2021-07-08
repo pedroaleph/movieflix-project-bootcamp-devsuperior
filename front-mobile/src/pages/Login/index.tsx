@@ -3,9 +3,14 @@ import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import ButtonIcon from "../../components/ButtonIcon";
 import eyesOpened from "../../assets/eyes-opened.png";
 import eyesClosed from "../../assets/eyes-closed.png";
+import { LoginData } from "../../services/auth";
 import { styles } from "./styles";
 
 const Login: React.FC = () => {
+  const [userInfo, setUserInfo] = useState<LoginData>({
+    username: '',
+    password: '',
+  });
   const [hidePassword, setHidePassword] = useState(true);
 
   const handleLogin = () => {
@@ -21,6 +26,8 @@ const Login: React.FC = () => {
         autoCapitalize="none"
         keyboardType="email-address"
         style={styles.input}
+        value={userInfo.username}
+        onChangeText={event => setUserInfo({ ...userInfo, username: event })}
       />
       <View style={styles.passwordContainer}>
         <TextInput
@@ -29,6 +36,8 @@ const Login: React.FC = () => {
           autoCapitalize="none"
           secureTextEntry={hidePassword}
           style={styles.input}
+          value={userInfo.password}
+          onChangeText={event => setUserInfo({ ...userInfo, password: event })}
         />
         <TouchableOpacity
           style={styles.toggle}
@@ -38,7 +47,7 @@ const Login: React.FC = () => {
           <Image style={styles.eyes} source={hidePassword ? eyesClosed : eyesOpened} />
         </TouchableOpacity>
       </View>
-      <ButtonIcon name="fazer login" handlePress={handleLogin}/>
+      <ButtonIcon name="fazer login" handlePress={handleLogin} />
     </View>
   )
 }
