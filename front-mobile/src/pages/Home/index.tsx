@@ -3,9 +3,14 @@ import { Image, Text, View } from "react-native";
 import ButtonIcon from "../../components/ButtonIcon";
 import { styles } from "./styles";
 import homeImage from '../../assets/home.png';
+import { useNavigation } from "@react-navigation/native";
 
 const Home: React.FC = () => {
+  const navigation = useNavigation();
 
+  const handleGoToLogin = () => {
+    navigation.navigate('Login');
+  }
   return (
     <View style={styles.container}>
       <Image source={homeImage} style={styles.image} />
@@ -15,7 +20,7 @@ const Home: React.FC = () => {
       <Text style={styles.subtitle}>
         Diga o que você achou do seu filme favorito
       </Text>
-      <ButtonIcon name="fazer login" currentPage="Home" nextPage="Login" />
+      <ButtonIcon name="fazer login" handlePress={handleGoToLogin} />
     </View>
   );
 }

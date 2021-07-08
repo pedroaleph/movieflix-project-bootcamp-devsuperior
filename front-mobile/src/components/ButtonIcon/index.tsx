@@ -2,21 +2,18 @@ import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { styles } from "./styles";
 import arrow from '../../assets/arrow.png';
-import { useNavigation } from "@react-navigation/native";
 
 type Props = {
   name: string;
-  nextPage: string;
+  handlePress: Function;
 }
 
-const ButtonIcon: React.FC<Props> = ({ name, nextPage }: Props) => {
-  const navigation = useNavigation();
-
+const ButtonIcon: React.FC<Props> = ({ name, handlePress }: Props) => {
   return(
     <TouchableOpacity
       style={styles.container}
       activeOpacity={0.8}
-      onPress={() => navigation.navigate(nextPage)}
+      onPress={() => handlePress()}
     >
         <Text style={styles.text}>
           {name}
