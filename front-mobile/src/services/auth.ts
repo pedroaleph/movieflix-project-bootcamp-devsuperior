@@ -1,5 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import { errorMessage } from "../custom";
+import jwtDecode from "jwt-decode";
+import { defaultMessage, errorMessage } from "../custom";
 
 export type LoginData = {
   username: string;
@@ -23,10 +24,11 @@ export const setAsyncStorageKeys = async (key: string, value: string) => {
   }
 }
 
-export const getAccessToken = async () => {
+export const getAccessTokenDecoded = async () => {
   try {
-    const accessToken = await AsyncStorage.getItem('@accessToken');
-    return accessToken;
+    const accessToken = await AsyncStorage.getItem('@accessToken') as string;
+    const tokenDecoded = await jwtDecode(accessToken);
+    return tokenDecoded as AccessToken;
   }
   catch (err) {
     errorMessage('Nenhum usuário encontrado!');
@@ -50,16 +52,27 @@ export const logout = () => {
   catch (err) {
     errorMessage('Erro ao sair!');
   }
-} 
+}
+
+export const isAuthenticated = async () => {
+  const token = await getAccessTokenDecoded();
+  return token && isTokenValid(token.exp);
+}
 
 const isTokenValid = (exp: number) => {
   const isValid = Date.now() <= exp * 1000;
 
   if(!isValid) {
-    errorMessage('Sessão expirada, logue novamente');
+    defaultMessage('Sessão expirada, logue novamente');
   }
 
   return isValid;
+}
+
+export const getAuthorities = async () => {
+  const tokenDecoded = await getAccessTokenDecoded();
+  
+  return tokenDecoded?.authorities;
 }
 
 
