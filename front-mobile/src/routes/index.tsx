@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import { colors } from "../custom";
+import Movies from "../pages/Movies";
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ const Routes: React.FC = () => {
       >
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Movies" component={Movies} />
       </Stack.Navigator>
     </NavigationContainer>
   );

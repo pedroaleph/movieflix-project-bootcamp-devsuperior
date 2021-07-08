@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Image, Text, View } from "react-native";
 import ButtonIcon from "../../components/ButtonIcon";
 import { styles } from "./styles";
 import homeImage from '../../assets/home.png';
 import { useNavigation } from "@react-navigation/native";
+import { getAccessToken } from "../../services/auth";
 
 const Home: React.FC = () => {
   const navigation = useNavigation();
+
+  const isLogged = async () => {
+    if (await getAccessToken()) {
+      navigation.reset({
+        index: 0,
+        routes: [{ name: 'Movies' }]
+      })
+    }
+  }
+
+  useEffect(() => {
+    isLogged();
+  }, [])
 
   const handleGoToLogin = () => {
     navigation.navigate('Login');

@@ -24,10 +24,15 @@ export const setAsyncStorageKeys = async (key: string, value: string) => {
   }
 }
 
+export const getAccessToken = async () =>{
+  const accessToken = await AsyncStorage.getItem('@accessToken');
+  return accessToken;
+}
+
 export const getAccessTokenDecoded = async () => {
   try {
-    const accessToken = await AsyncStorage.getItem('@accessToken') as string;
-    const tokenDecoded = await jwtDecode(accessToken);
+    const accessToken = await getAccessToken() as string;
+    const tokenDecoded = jwtDecode(accessToken);
     return tokenDecoded as AccessToken;
   }
   catch (err) {
@@ -48,6 +53,7 @@ export const getUsername = async () => {
 export const logout = () => {
   try {
     AsyncStorage.removeItem('@accessToken');
+    AsyncStorage.removeItem('@username');
   }
   catch (err) {
     errorMessage('Erro ao sair!');
@@ -55,8 +61,9 @@ export const logout = () => {
 }
 
 export const isAuthenticated = async () => {
-  const token = await getAccessTokenDecoded();
-  return token && isTokenValid(token.exp);
+  const tokenDecoded = await getAccessTokenDecoded();
+
+  return tokenDecoded && isTokenValid(tokenDecoded.exp);
 }
 
 const isTokenValid = (exp: number) => {
@@ -74,6 +81,7 @@ export const getAuthorities = async () => {
   
   return tokenDecoded?.authorities;
 }
+
 
 
 

@@ -33,3 +33,7 @@ export const login = async (loginData: LoginData) => {
 
   return res;
 }
+
+export const getMovies = async() => {
+  
+}
