@@ -1,48 +1,50 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { getMovies } from '../../services/requests';
 import { Genre } from '../../types/genre';
 import { Movie } from '../../types/movie';
 import GenreFilter from './GenreFilter';
+import MovieCard from './MovieCard';
 import { styles } from './styles';
 
 const Movies: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>();
   const [isLoading, setIsLoading] = useState(false);
-  const [genre, setGenre] = useState<Genre>();
+  const [genre, setGenre] = useState<Genre>({ id: 0, name: '' });
 
-  const loadMovies = async () => {
-    const params = {
-      genreId: genre?.id,
-      size: 20,
-    }
-    setIsLoading(true);
-    const res = await getMovies({ params });
-    setMovies(res.data.content);
-    setIsLoading(false);
-  }
+  const loadMovies = useCallback(async () => {
+      const params = {
+        genreId: genre.id,
+        size: 20,
+      }
+      setIsLoading(true);
+      const res = await getMovies({ params });
+      setMovies(res.data.content);
+      setIsLoading(false);
+    }, [genre])
 
-  const handleChangeGenre = (genre: Genre | undefined) => {
-    setGenre(genre);
+  const handleChangeGenre = (genreSelected: Genre) => {
+    setGenre(genreSelected);
   }
 
   useEffect(() => {
     loadMovies();
-  }, [])
+  }, [genre])
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <GenreFilter handleChangeGenre={handleChangeGenre} />
-        {isLoading ? (
-          <View style={styles.loadingContainer}>
-            <ActivityIndicator size="large" color="#FFC700" />
-          </View>
-        )  : (
-          <View>
-
-          </View>
-        )}
-      </View>
+      {isLoading ? (
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color="#FFC700" />
+        </View>
+      ) : (movies && movies.map(movie => (
+        <MovieCard key={movie.id} movie={movie}/>
+      ))
+      )}
+      <View style={{ marginBottom: 60 }}/>
+    </ScrollView>
   )
 }
 

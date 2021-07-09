@@ -7,7 +7,7 @@ import { styles } from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
 
 type Props = {
-  handleChangeGenre: (genre: Genre | undefined) => void;
+  handleChangeGenre: (genre: Genre) => void;
 }
 
 const GenreFilter: React.FC<Props> = ({ handleChangeGenre }: Props) => {
@@ -60,7 +60,7 @@ const GenreFilter: React.FC<Props> = ({ handleChangeGenre }: Props) => {
               activeOpacity={0.8}
               onPress={() => {
                 setSelectedGenre(undefined);
-                handleChangeGenre(undefined);
+                handleChangeGenre({ id: 0, name: '' });
                 setIsShowingGenders(!isShowingGenders);
               }}
             >

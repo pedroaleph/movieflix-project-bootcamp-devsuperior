@@ -3,10 +3,10 @@ import { colors } from "../../custom";
 
 export const styles = StyleSheet.create({
   container: {
-    margin: 20,
+    padding: 20,
   },
   loadingContainer: {
-    height: "80%",
+    height: 500,
     justifyContent: "center",
-  }
+  },
 })
