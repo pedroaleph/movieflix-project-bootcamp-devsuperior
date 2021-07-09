@@ -1,6 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
+import { defaultStyles } from "../../../custom";
 import { Movie } from "../../../types/movie";
 import { styles } from "./styles";
 
@@ -12,7 +13,7 @@ const MovieCard: React.FC<Props> = ({ movie }: Props) => {
   const navigation = useNavigation();
 
   return (
-    <View style={styles.container} >
+    <View style={[ defaultStyles.cardBase, styles.container]} >
       <Image source={{ uri: movie.imgUrl }} style={styles.movieImg} />
       <View style={styles.movieInfoContainer}>
         <Text style={styles.titleText}>{movie.title}</Text>

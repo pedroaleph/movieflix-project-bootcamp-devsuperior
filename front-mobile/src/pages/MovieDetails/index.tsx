@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { ActivityIndicator, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
+import LoadingContent from "../../components/LoadingContent";
+import { defaultStyles } from "../../custom";
 import { getMovieById } from "../../services/requests";
 import { Movie } from "../../types/movie";
 import MovieInfo from "./MovieInfo";
 import Reviews from "./Reviews";
-import { styles } from "./styles";
 
 type Props = {
   route: {
@@ -32,12 +33,8 @@ const MovieDetails: React.FC<Props> = (
   }, []);
   
   return (
-    <ScrollView style={styles.container}>
-      {isLoading ? (
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#FFC700" />
-        </View>
-      ) : <>
+    <ScrollView style={defaultStyles.container}>
+      {isLoading ? <LoadingContent /> : <>
       {movie && <>
         <MovieInfo movie={movie} />
         <Reviews movie_id={id} reviews={movie.reviews} />

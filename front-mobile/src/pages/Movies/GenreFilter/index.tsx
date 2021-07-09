@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Image, Modal, Text, TouchableOpacity, View } from "react-native";
+import { Image, Modal, Text, TouchableOpacity, View } from "react-native";
 import { getGenders } from "../../../services/requests";
 import { Genre } from "../../../types/genre";
 import arrow from "../../../assets/arrow.png"
 import { styles } from "./styles";
 import { ScrollView } from "react-native-gesture-handler";
+import { defaultStyles } from "../../../custom";
 
 type Props = {
   handleChangeGenre: (genre: Genre) => void;
@@ -28,14 +29,18 @@ const GenreFilter: React.FC<Props> = ({ handleChangeGenre }: Props) => {
   }, [])
 
   return (
-    <View style={styles.container}>
+    <View style={[ defaultStyles.cardBase, styles.container]}>
       <Modal
         visible={isShowingGenders}
         animationType="fade"
         transparent
         presentationStyle="overFullScreen"
       >
-        <View style={styles.modalContainer}>
+        <TouchableOpacity
+          style={styles.modalContainer}
+          activeOpacity={1}
+          onPress={() => setIsShowingGenders(!isShowingGenders)}
+        >
           <Text style={styles.modalText}>Selecione um gênero:</Text>
           <ScrollView style={styles.modalContent}>
             {genders && genders.map(genre => (
@@ -69,7 +74,7 @@ const GenreFilter: React.FC<Props> = ({ handleChangeGenre }: Props) => {
               </Text>
             </TouchableOpacity>
           </ScrollView>
-        </View>
+        </TouchableOpacity>
       </Modal>
       {!isLoading && (
         <TouchableOpacity

@@ -10,10 +10,10 @@ const NavBar: React.FC = () => {
   const navigation = useNavigation();
   const [isLogged, setIsLogged] = useState(false);
   const privatesRoutes = ['Movies', 'MovieDetails'];
-  const userRoute = useRoute();
+  const route = useRoute();
 
   const userState = async () => {
-    const isRoutePrivate = privatesRoutes.includes(userRoute.name);
+    const isRoutePrivate = privatesRoutes.includes(route.name);
 
     if (isRoutePrivate) {
       const state = await isAuthenticated();

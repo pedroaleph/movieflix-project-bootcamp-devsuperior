@@ -3,17 +3,8 @@ import { colors } from "../../../custom";
 
 export const styles = StyleSheet.create({
   container: {
-    width: "100%",
     height: 408,
-    backgroundColor: colors.card,
     borderRadius: 10,
-    shadowColor: colors.shadow,
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
     marginTop: 20,
     paddingVertical: 20,
   },

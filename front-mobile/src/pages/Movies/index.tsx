@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import LoadingContent from '../../components/LoadingContent';
+import { defaultStyles } from '../../custom';
 import { getMovies } from '../../services/requests';
 import { Genre } from '../../types/genre';
 import { Movie } from '../../types/movie';
 import GenreFilter from './GenreFilter';
 import MovieCard from './MovieCard';
-import { styles } from './styles';
 
 const Movies: React.FC = () => {
   const [movies, setMovies] = useState<Movie[]>();
@@ -33,13 +34,9 @@ const Movies: React.FC = () => {
   }, [genre])
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={defaultStyles.container}>
       <GenreFilter handleChangeGenre={handleChangeGenre} />
-      {isLoading ? (
-        <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#FFC700" />
-        </View>
-      ) : (movies && movies.map(movie => (
+      {isLoading ? <LoadingContent /> : (movies && movies.map(movie => (
         <MovieCard key={movie.id} movie={movie}/>
       ))
       )}
