@@ -8,10 +8,6 @@ export const styles = StyleSheet.create({
     marginTop: 20,
     paddingVertical: 20,
   },
-  movieImg: {
-    width: "100%",
-    height: 225
-  },
   movieInfoContainer: {
     marginTop: 20,
     marginHorizontal: 15,

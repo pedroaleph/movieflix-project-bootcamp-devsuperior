@@ -31,6 +31,10 @@ const defaultStyles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
   },
+  movieImg: {
+    width: "100%",
+    height: 225,
+  },
 });
 
 const errorMessage = (message: string) => {
