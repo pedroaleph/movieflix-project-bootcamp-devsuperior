@@ -55,3 +55,17 @@ export const getGenders = async () => {
 
   return res;
 }
+
+export const getMovieById = async (id : number) => {
+  const headers = await getBearerToken();
+  const res = api.get(`/movies/${id}`, { headers });
+
+  return res;
+}
+
+export const createReview = async (data: Object) => {
+  const headers = await getBearerToken();
+  const res = api.post('/reviews', data, { headers });
+
+  return res;
+}

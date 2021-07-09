@@ -21,10 +21,7 @@ const Login: React.FC = () => {
     await login(userInfo)
       .then(async () => {
         const username = await getUsername();
-        navigation.reset({
-          index: 0,
-          routes: [{name: 'Movies'}]
-      })
+        navigation.reset({ routes: [{name: 'Movies'}] })
 
     defaultMessage(`Bem vindo(a) ${username}`)
   })

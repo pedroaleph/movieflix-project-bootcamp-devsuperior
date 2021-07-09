@@ -36,4 +36,11 @@ const successMessage = (message: string) => {
   })
 }
 
-export { colors, errorMessage, defaultMessage, successMessage};
+const loadingMessage = (message: string) => {
+  Toast.showLoading(message, {
+    containerStyle: { backgroundColor: colors.primary },
+    textStyle: { color: colors.black },
+  })
+}
+
+export { colors, errorMessage, defaultMessage, successMessage, loadingMessage };

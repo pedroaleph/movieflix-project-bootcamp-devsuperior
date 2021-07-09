@@ -4,17 +4,17 @@ import ButtonIcon from "../../components/ButtonIcon";
 import { styles } from "./styles";
 import homeImage from '../../assets/home.png';
 import { useNavigation } from "@react-navigation/native";
-import { getAccessToken } from "../../services/auth";
+import { getAccessToken, getUsername } from "../../services/auth";
+import { defaultMessage } from "../../custom";
 
 const Home: React.FC = () => {
   const navigation = useNavigation();
 
   const isLogged = async () => {
     if (await getAccessToken()) {
-      navigation.reset({
-        index: 0,
-        routes: [{ name: 'Movies' }]
-      })
+      navigation.reset({ routes: [{ name: 'Movies' }] });
+      const username = await getUsername();
+      defaultMessage(`Bem vindo(a) de volta, ${username}`)
     }
   }
 

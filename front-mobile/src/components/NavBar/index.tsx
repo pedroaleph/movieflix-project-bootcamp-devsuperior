@@ -34,10 +34,7 @@ const NavBar: React.FC = () => {
 
   const doLogout = () => {
     logout();
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Home' }]
-    })
+    navigation.reset({ routes: [{ name: 'Home' }] });
   }
 
   return (
