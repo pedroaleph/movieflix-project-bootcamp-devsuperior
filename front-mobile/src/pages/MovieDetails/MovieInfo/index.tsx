@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { Image, Text, View } from "react-native";
 import { Movie } from "../../../types/movie";
 import { styles } from "./styles";
 
@@ -7,12 +7,12 @@ type Props = {
   movie: Movie;
 }
 
-const Movie: React.FC<Props> = ({ movie }) => {
+const MovieInfo: React.FC<Props> = ({ movie }) => {
   return (
     <View style={styles.container}>
-      
+      <Text>{movie.title}</Text>
     </View>
   )
 }
 
-export default Movie;
+export default MovieInfo;

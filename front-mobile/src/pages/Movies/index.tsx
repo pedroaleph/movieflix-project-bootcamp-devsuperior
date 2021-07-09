@@ -19,9 +19,9 @@ const Movies: React.FC = () => {
         size: 20,
       }
       setIsLoading(true);
-      const res = await getMovies({ params });
-      setMovies(res.data.content);
-      setIsLoading(false);
+      await getMovies({ params })
+      .then(res => setMovies(res.data.content))
+      .finally(() => setIsLoading(false)); 
     }, [genre])
 
   const handleChangeGenre = (genreSelected: Genre) => {

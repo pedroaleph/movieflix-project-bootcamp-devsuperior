@@ -5,7 +5,7 @@ import eyesOpened from "../../assets/eyes-opened.png";
 import eyesClosed from "../../assets/eyes-closed.png";
 import { getUsername, LoginData } from "../../services/auth";
 import { styles } from "./styles";
-import { defaultMessage, errorMessage} from "../../custom";
+import { defaultMessage, errorMessage } from "../../custom";
 import { login } from "../../services/requests";
 import { useNavigation } from "@react-navigation/native";
 
@@ -21,48 +21,47 @@ const Login: React.FC = () => {
     await login(userInfo)
       .then(async () => {
         const username = await getUsername();
-        navigation.reset({ routes: [{name: 'Movies'}] })
-
-    defaultMessage(`Bem vindo(a) ${username}`)
-  })
-    .catch (() => {
-  errorMessage('Usuário ou senha inválidos!')
-})
+        navigation.reset({ routes: [{ name: 'Movies' }] })
+        defaultMessage(`Bem vindo(a) ${username}`)
+      })
+      .catch(() => {
+        errorMessage('Usuário ou senha inválidos!')
+      })
   }
 
-return (
-  <View style={styles.container}>
-    <Text style={styles.text}>login</Text>
-    <TextInput
-      placeholder="Email"
-      placeholderTextColor="#BFBFBF"
-      autoCapitalize="none"
-      keyboardType="email-address"
-      style={styles.input}
-      value={userInfo.username}
-      onChangeText={event => setUserInfo({ ...userInfo, username: event })}
-    />
-    <View style={styles.passwordContainer}>
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>login</Text>
       <TextInput
-        placeholder="Senha"
+        placeholder="Email"
         placeholderTextColor="#BFBFBF"
         autoCapitalize="none"
-        secureTextEntry={hidePassword}
+        keyboardType="email-address"
         style={styles.input}
-        value={userInfo.password}
-        onChangeText={event => setUserInfo({ ...userInfo, password: event })}
+        value={userInfo.username}
+        onChangeText={event => setUserInfo({ ...userInfo, username: event })}
       />
-      <TouchableOpacity
-        style={styles.toggle}
-        activeOpacity={0.8}
-        onPress={() => setHidePassword(!hidePassword)}
-      >
-        <Image style={styles.eyes} source={hidePassword ? eyesClosed : eyesOpened} />
-      </TouchableOpacity>
+      <View style={styles.passwordContainer}>
+        <TextInput
+          placeholder="Senha"
+          placeholderTextColor="#BFBFBF"
+          autoCapitalize="none"
+          secureTextEntry={hidePassword}
+          style={styles.input}
+          value={userInfo.password}
+          onChangeText={event => setUserInfo({ ...userInfo, password: event })}
+        />
+        <TouchableOpacity
+          style={styles.toggle}
+          activeOpacity={0.8}
+          onPress={() => setHidePassword(!hidePassword)}
+        >
+          <Image style={styles.eyes} source={hidePassword ? eyesClosed : eyesOpened} />
+        </TouchableOpacity>
+      </View>
+      <ButtonIcon name="fazer login" handlePress={handleLogin} />
     </View>
-    <ButtonIcon name="fazer login" handlePress={handleLogin} />
-  </View>
-)
+  )
 }
 
 export default Login;
