@@ -1,5 +1,5 @@
-import axios from "axios";
-import { LoginData, logout, setAsyncStorageKeys } from "./auth";
+import axios, { AxiosRequestConfig } from "axios";
+import { LoginData, logout, setAsyncStorageKeys, getAccessToken } from "./auth";
 import queryString from 'query-string';
 
 export const api  = axios.create({
@@ -33,7 +33,25 @@ export const login = async (loginData: LoginData) => {
 
   return res;
 }
+const getBearerToken = async () => {
+  const authToken = await getAccessToken();
+  const headers = {
+    Authorization: `Bearer ${authToken}`
+  }
 
-export const getMovies = async() => {
-  
+  return headers;
+}
+
+export const getMovies = async (params: AxiosRequestConfig) => {
+  const headers = await getBearerToken();
+  const res = api.get('/movies', { ...params, headers } );
+
+  return res;
+}
+
+export const getGenders = async () => {
+  const headers = await getBearerToken();
+  const res = api.get('/genres', { headers });
+
+  return res;
 }

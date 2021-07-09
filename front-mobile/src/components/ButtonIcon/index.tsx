@@ -5,7 +5,7 @@ import arrow from '../../assets/arrow.png';
 
 type Props = {
   name: string;
-  handlePress: Function;
+  handlePress: () => void;
 }
 
 const ButtonIcon: React.FC<Props> = ({ name, handlePress }: Props) => {

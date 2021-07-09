@@ -5,7 +5,7 @@ import eyesOpened from "../../assets/eyes-opened.png";
 import eyesClosed from "../../assets/eyes-closed.png";
 import { getUsername, LoginData } from "../../services/auth";
 import { styles } from "./styles";
-import { defaultMessage, errorMessage } from "../../custom";
+import { defaultMessage, errorMessage} from "../../custom";
 import { login } from "../../services/requests";
 import { useNavigation } from "@react-navigation/native";
 

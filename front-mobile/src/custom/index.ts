@@ -12,6 +12,7 @@ const colors = {
   placeholder: "#BFBFBF",
   eyes: "#9E9E9E",
   card: "#6C6C6C",
+  shadow: "rgba(0, 0, 0, 0.25)",
 };
 
 const errorMessage = (message: string) => {
@@ -35,4 +36,4 @@ const successMessage = (message: string) => {
   })
 }
 
-export { colors, errorMessage, defaultMessage, successMessage };
+export { colors, errorMessage, defaultMessage, successMessage};
