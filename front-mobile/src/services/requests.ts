@@ -1,9 +1,12 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { LoginData, logout, setAsyncStorageKeys, getAccessToken } from "./auth";
+import { BACKEND_URL } from "react-native-dotenv";
 import queryString from 'query-string';
 
+const BASE_URL = BACKEND_URL ?? 'http://localhost:8080';
+
 export const api  = axios.create({
-  baseURL: 'https://movieflix-pedroaleph.herokuapp.com',
+  baseURL: BASE_URL,
 })
 
 axios.interceptors.response.use(
