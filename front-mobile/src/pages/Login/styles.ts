@@ -17,15 +17,6 @@ export const styles = StyleSheet.create({
     height: 65,
     marginBottom: 50,
   },
-  input: {
-    height: 50,
-    width: '100%',
-    backgroundColor: colors.input,
-    borderWidth: 1,
-    borderColor: colors.border,
-    borderRadius: 10,
-    paddingHorizontal: 15
-  },
   passwordContainer: {
     width: '100%',
     paddingVertical: 35,

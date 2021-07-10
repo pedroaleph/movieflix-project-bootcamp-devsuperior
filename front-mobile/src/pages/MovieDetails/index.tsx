@@ -20,24 +20,36 @@ const MovieDetails: React.FC<Props> = (
 ) => {
   const [movie, setMovie] = useState<Movie>();
   const [isLoading, setIsLoading] = useState(false);
+  const [reload, setReload] = useState(1);
 
   const loadMovieById = useCallback(async () => {
     setIsLoading(true);
     await getMovieById(id)
       .then(res => setMovie(res.data))
-      .finally(() => setIsLoading(false));
+      .finally(() => {
+        setReload(reload + 1)
+        setIsLoading(false);
+      });
   }, []);
 
   useEffect(() => {
     loadMovieById();
-  }, []);
+  }, [reload]);
+
+  const handleReload = () => {
+    setReload(reload - 1);
+  }
   
   return (
     <ScrollView style={defaultStyles.container}>
       {isLoading ? <LoadingContent /> : <>
       {movie && <>
         <MovieInfo movie={movie} />
-        <Reviews movie_id={id} reviews={movie.reviews} />
+        <Reviews
+          movie_id={id}
+          reviews={movie.reviews}
+          handleReload={handleReload}
+        />
       </>}
       </>
       }

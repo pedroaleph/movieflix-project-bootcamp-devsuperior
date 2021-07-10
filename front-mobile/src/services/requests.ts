@@ -44,28 +44,28 @@ const getBearerToken = async () => {
 
 export const getMovies = async (params: AxiosRequestConfig) => {
   const headers = await getBearerToken();
-  const res = api.get('/movies', { ...params, headers } );
+  const res = await api.get('/movies', { ...params, headers } );
 
   return res;
 }
 
 export const getGenders = async () => {
   const headers = await getBearerToken();
-  const res = api.get('/genres', { headers });
+  const res = await api.get('/genres', { headers });
 
   return res;
 }
 
 export const getMovieById = async (id : number) => {
   const headers = await getBearerToken();
-  const res = api.get(`/movies/${id}`, { headers });
+  const res = await api.get(`/movies/${id}`, { headers });
 
   return res;
 }
 
-export const createReview = async (data: Object) => {
+export const postReview = async (params: AxiosRequestConfig) => {
   const headers = await getBearerToken();
-  const res = api.post('/reviews', data, { headers });
-
+  const data = params.data;
+  const res = await api.post('/reviews', data, { headers } );
   return res;
 }

@@ -20,6 +20,17 @@ const defaultStyles = StyleSheet.create({
   container: {
     padding: 20,
   },
+  inputBase: {
+    width: '100%',
+    backgroundColor: colors.input,
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 10,
+    padding: 15,
+    fontSize: 16,
+    lineHeight: 22,
+    letterSpacing: -0.015,
+  },
   cardBase: {
     width: "100%",
     backgroundColor: colors.card,
@@ -34,6 +45,27 @@ const defaultStyles = StyleSheet.create({
   movieImg: {
     width: "100%",
     height: 225,
+  },
+  movieDetailsContainer: {
+    borderRadius: 20,
+    paddingTop: 15,
+    paddingBottom: 20,
+    marginBottom: 20,
+  },
+  movieDetailsBorderContainer: {
+    width: "100%",
+    borderWidth: 1,
+    borderColor: colors.border,
+    borderRadius: 20,
+    paddingVertical: 15,
+    paddingHorizontal: 20,
+  },
+  movieDetailsBorderText: {
+    fontSize: 16,
+    lineHeight: 22,
+    letterSpacing: -0.015,
+    textAlign: "justify",
+    color: colors.eyes,
   },
 });
 

@@ -5,12 +5,12 @@ import eyesOpened from "../../assets/eyes-opened.png";
 import eyesClosed from "../../assets/eyes-closed.png";
 import { getUsername, LoginData } from "../../services/auth";
 import { styles } from "./styles";
-import { defaultMessage, errorMessage } from "../../custom";
+import { defaultMessage, defaultStyles, errorMessage } from "../../custom";
 import { login } from "../../services/requests";
 import { useNavigation } from "@react-navigation/native";
 
 const Login: React.FC = () => {
-  const [userInfo, setUserInfo] = useState<LoginData>({
+  const [loginData, setLoginData] = useState<LoginData>({
     username: '',
     password: '',
   });
@@ -18,7 +18,7 @@ const Login: React.FC = () => {
   const navigation = useNavigation();
 
   const handleLogin = async () => {
-    await login(userInfo)
+    await login(loginData)
       .then(async () => {
         const username = await getUsername();
         navigation.reset({ routes: [{ name: 'Movies' }] })
@@ -37,9 +37,9 @@ const Login: React.FC = () => {
         placeholderTextColor="#BFBFBF"
         autoCapitalize="none"
         keyboardType="email-address"
-        style={styles.input}
-        value={userInfo.username}
-        onChangeText={event => setUserInfo({ ...userInfo, username: event })}
+        style={[defaultStyles.inputBase, { height: 50 }]}
+        value={loginData.username}
+        onChangeText={event => setLoginData({ ...loginData, username: event })}
       />
       <View style={styles.passwordContainer}>
         <TextInput
@@ -47,9 +47,9 @@ const Login: React.FC = () => {
           placeholderTextColor="#BFBFBF"
           autoCapitalize="none"
           secureTextEntry={hidePassword}
-          style={styles.input}
-          value={userInfo.password}
-          onChangeText={event => setUserInfo({ ...userInfo, password: event })}
+          style={[defaultStyles.inputBase, { height: 50 }]}
+          value={loginData.password}
+          onChangeText={event => setLoginData({ ...loginData, password: event })}
         />
         <TouchableOpacity
           style={styles.toggle}

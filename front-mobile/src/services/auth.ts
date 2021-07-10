@@ -69,11 +69,14 @@ export const isAuthenticated = async () => {
 const isTokenValid = (exp: number) => {
   const isValid = Date.now() <= exp * 1000;
 
-  if(!isValid) {
+  try {
+    if(isValid)
+      return isValid;
+    else throw Error();
+  }
+  catch (err) {
     defaultMessage('Sessão expirada, logue novamente');
   }
-
-  return isValid;
 }
 
 export const getAuthorities = async () => {

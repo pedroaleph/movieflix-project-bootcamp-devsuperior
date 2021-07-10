@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 40,
   },
   image: {
-    width: '100%',
+    maxWidth: '100%',
     marginBottom: 40,
   },
   title: {
