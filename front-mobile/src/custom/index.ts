@@ -44,7 +44,7 @@ const defaultStyles = StyleSheet.create({
   },
   movieImg: {
     width: "100%",
-    height: 225,
+    height: 227,
   },
   movieDetailsContainer: {
     borderRadius: 20,

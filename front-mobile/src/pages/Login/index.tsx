@@ -5,9 +5,10 @@ import eyesOpened from "../../assets/eyes-opened.png";
 import eyesClosed from "../../assets/eyes-closed.png";
 import { getUsername, LoginData } from "../../services/auth";
 import { styles } from "./styles";
-import { defaultMessage, defaultStyles, errorMessage } from "../../custom";
+import { defaultMessage, defaultStyles, errorMessage, loadingMessage } from "../../custom";
 import { login } from "../../services/requests";
 import { useNavigation } from "@react-navigation/native";
+import Toast from "react-native-tiny-toast";
 
 const Login: React.FC = () => {
   const [loginData, setLoginData] = useState<LoginData>({
@@ -18,13 +19,16 @@ const Login: React.FC = () => {
   const navigation = useNavigation();
 
   const handleLogin = async () => {
+    const loading = loadingMessage("Autenticando...");
     await login(loginData)
       .then(async () => {
+        Toast.hide(loading);
         const username = await getUsername();
         navigation.reset({ routes: [{ name: 'Movies' }] })
         defaultMessage(`Bem vindo(a) ${username}`)
       })
       .catch(() => {
+        Toast.hide(loading);
         errorMessage('Usuário ou senha inválidos!')
       })
   }

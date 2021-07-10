@@ -12,7 +12,11 @@ Movieflix é uma aplicação full stack web e mobile Desenvolvido como projeto f
 A aplicação consistem em :
 - Permite avaliar cada filme em um catalógo de filmes (para isso é necessário que o usuário faça login)
 - Apenas usuários membros podem avaliar os filmes, visitantes podem apenas visualizar essas avaliações
-- No catálogo de filmes é possivel filtrar os filmes pelo seu gênero 
+- No catálogo de filmes é possivel filtrar os filmes pelo seu gênero
+
+- Para testar utlize um deste usuários: 
+-- username: ana@gmail.com senha: 123456 authoridade: membro
+-- username: bob@gmail.com senha: 123456 authoridade: visitante
 
 # Tecnologias utilizadas
 ## Back end
@@ -24,7 +28,6 @@ A aplicação consistem em :
 - HTML / CSS / JS / TypeScript
 - ReactJS
 - React Native
-- Apex Charts
 - Expo
 ## Implantação em produção
 - Back end: Heroku

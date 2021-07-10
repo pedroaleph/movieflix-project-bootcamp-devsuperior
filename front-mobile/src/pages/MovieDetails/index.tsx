@@ -22,22 +22,21 @@ const MovieDetails: React.FC<Props> = (
   const [isLoading, setIsLoading] = useState(false);
   const [reload, setReload] = useState(1);
 
-  const loadMovieById = useCallback(async () => {
+  const loadMovieById = async () => {
     setIsLoading(true);
     await getMovieById(id)
       .then(res => setMovie(res.data))
       .finally(() => {
-        setReload(reload + 1)
         setIsLoading(false);
       });
-  }, []);
+  };
 
   useEffect(() => {
     loadMovieById();
   }, [reload]);
 
   const handleReload = () => {
-    setReload(reload - 1);
+    setReload(reload + 1);
   }
   
   return (
