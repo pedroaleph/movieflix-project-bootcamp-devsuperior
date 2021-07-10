@@ -1,9 +1,13 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { LoginData, logout, setAsyncStorageKeys, getAccessToken } from "./auth";
-import { BACKEND_URL } from "react-native-dotenv";
 import queryString from 'query-string';
 
-const BASE_URL = BACKEND_URL ?? 'http://localhost:8080';
+//import { BACKEND_URL } from "react-native-dotenv";
+
+//nao consegui com dotenv
+//localhost creio que só funcione por emulador
+const BASE_URL = 'http://localhost:8080';
+//const BASE_URL = 'https://movieflix-pedroaleph.herokuapp.com';
 
 export const api  = axios.create({
   baseURL: BASE_URL,
