@@ -14,7 +14,7 @@ A aplicação consistem em :
 - Apenas usuários membros podem avaliar os filmes, visitantes podem apenas visualizar essas avaliações
 - No catálogo de filmes é possivel filtrar os filmes pelo seu gênero
 
-- Para testar utlize um deste usuários: 
+Para testar utlize um deste usuários: 
 - username: ana@gmail.com senha: 123456 autoridade: membro
 - username: bob@gmail.com senha: 123456 autoridade: visitante
 
