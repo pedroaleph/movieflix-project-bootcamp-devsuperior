@@ -15,8 +15,8 @@ A aplicação consistem em :
 - No catálogo de filmes é possivel filtrar os filmes pelo seu gênero
 
 - Para testar utlize um deste usuários: 
--- username: ana@gmail.com senha: 123456 authoridade: membro
--- username: bob@gmail.com senha: 123456 authoridade: visitante
+- username: ana@gmail.com senha: 123456 autoridade: membro
+- username: bob@gmail.com senha: 123456 autoridade: visitante
 
 # Tecnologias utilizadas
 ## Back end
